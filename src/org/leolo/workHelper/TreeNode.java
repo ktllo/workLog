@@ -1,5 +1,6 @@
 package org.leolo.workHelper;
 
+import java.util.Collection;
 import java.util.Random;
 import java.util.TreeMap;
 
@@ -27,5 +28,8 @@ public abstract class TreeNode {
 		return nodeID;
 	}
 
+	public Collection<TreeNode> getChild(){
+		return childs.values();
+	}
 
 }
