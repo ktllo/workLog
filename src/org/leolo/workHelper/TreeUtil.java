@@ -3,7 +3,7 @@ package org.leolo.workHelper;
 import java.io.PrintStream;
 import java.util.Collection;
 
-public class TreeUtil {
+public final class TreeUtil {
 
 	private TreeUtil() {
 		//You should not do this
