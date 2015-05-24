@@ -24,4 +24,11 @@ public final class TreeUtil {
 	public static void traversal(TreeNode root, PrintStream out){
 		traversal(root,out,0);
 	}
+	
+	public static String format(int num){
+		String s = Integer.toHexString(num);
+		while(s.length() < 8)
+			s = "0"+s;
+		return s;
+	}
 }

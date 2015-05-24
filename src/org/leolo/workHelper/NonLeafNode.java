@@ -22,5 +22,10 @@ public abstract class NonLeafNode extends TreeNode {
 	public Collection<TreeNode> getChildren(){
 		return this.children.values();
 	}
+	
+	@Override
+	public boolean hasChild(){
+		return this.children.size() != 0;
+	}
 
 }

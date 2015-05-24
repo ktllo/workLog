@@ -8,8 +8,8 @@ public abstract class TreeNode {
 	protected TreeNode parent;
 	protected String name;
 	protected static Random random;
-	private String note;
-	private final int nodeID;
+	private String note = "";
+	public final int nodeID;
 	static{
 		random = new Random();
 	}
@@ -20,10 +20,6 @@ public abstract class TreeNode {
 	}
 	
 	public abstract void addChild(TreeNode node);
-
-	public int getNodeID() {
-		return nodeID;
-	}
 
 	public abstract Collection<TreeNode> getChildren();
 
@@ -51,5 +47,14 @@ public abstract class TreeNode {
 	
 	public final boolean isRoot(){
 		return parent == null;
+	}
+	
+	@Override
+	public int hashCode(){
+		int hash = name.hashCode() ^ note.hashCode();
+		for(TreeNode node:getChildren()){
+			hash += node.hashCode();
+		}
+		return hash;
 	}
 }
